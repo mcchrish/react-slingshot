@@ -24,6 +24,7 @@
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
+    "font-awesome": "4.6.3",
     "object-assign": "4.1.0",
     "react": "15.2.0",
     "react-dom": "15.2.0",
