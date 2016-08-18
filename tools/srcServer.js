@@ -9,9 +9,13 @@ import historyApiFallback from 'connect-history-api-fallback';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
+import Dashboard from 'webpack-dashboard';
+import DashboardPlugin from 'webpack-dashboard/plugin';
 import config from '../webpack.config.dev';
 
 const bundler = webpack(config);
+
+const dashboard = new Dashboard();
 
 // Run Browsersync and use middleware for Hot Module Replacement
 browserSync({
@@ -57,3 +61,5 @@ browserSync({
     'src/*.html'
   ]
 });
+
+bundler.apply(new DashboardPlugin(dashboard.setData));
